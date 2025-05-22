@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import ReviewComponent from "../components/ReviewComponent.astro";
+import ProductComponent from "../components/productComponent.astro";
 ---
 
 <html lang="en">
@@ -10,8 +12,8 @@ import "../styles/global.css";
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
-  <body class="bg-[#f7f6e8]">
-    <header class="p-6 text-black bg-[#FDFCE5]">
+  <body class="bg-gradient-to-b from-[#FFFDE4] via-[#FFDEE9] to-[#e9fffb]">
+    <header class="p-6 text-black bg-[#ffffff]">
       <nav class="flex justify-between items-center text-2xl font-bold">
         <h1 class="text-3xl text-black-500">SOLAR</h1>
         <div class="flex gap-8">
@@ -60,201 +62,225 @@ import "../styles/global.css";
           id="products"
           class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 px-6"
         >
-          <div
-            class="rounded-lg shadow-md p-6 transform hover:scale-102 hover:drop-shadow-2xl hover:bg-[#cceeff] hover:opacity-70 transition duration-500"
-          >
-            <img
-              src="/img/llauna default.png"
-              alt=""
-              class="mx-auto w-3/4 rounded-md"
-            />
-            <h2 class="text-lg font-semibold mt-4">Summer Punch</h2>
-          </div>
-          <div
-            class="rounded-lg shadow-md p-6 transform hover:scale-102 hover:drop-shadow-2xl hover:bg-[#cceeff] hover:opacity-70 transition duration-500"
-          >
-            <img
-              src="/img/llauna morada.png"
-              alt=""
-              class="mx-auto w-3/4 rounded-md"
-            />
-            <h2 class="text-lg font-semibold mt-4">Wild Summer</h2>
-          </div>
-          <div
-            class="rounded-lg shadow-md p-6 transform hover:scale-102 hover:drop-shadow-2xl hover:bg-[#cceeff] hover:opacity-70 transition duration-500"
-          >
-            <img
-              src="/img/llauna verde.png"
-              alt=""
-              class="mx-auto w-3/4 rounded-md"
-            />
-            <h2 class="text-lg font-semibold mt-4">Green Sun</h2>
-          </div>
-          <div
-            class="rounded-lg shadow-md p-6 transform hover:scale-102 hover:drop-shadow-2xl hover:bg-[#cceeff] hover:opacity-70 transition duration-500"
-          >
-            <img
-              src="/img/llauna blau.png"
-              alt=""
-              class="mx-auto w-3/4 rounded-md"
-            />
-            <h2 class="text-lg font-semibold mt-4">Peach Heat</h2>
-          </div>
+          <ProductComponent
+            Productimage="/img/llauna default.png"
+            ProductName="Summer Punch"
+          />
+          <ProductComponent
+            Productimage="/img/llauna morada.png"
+            ProductName="Wild Summer"
+          />
+          <ProductComponent
+            Productimage="/img/llauna verde.png"
+            ProductName="Green Sun"
+          />
+          <ProductComponent
+            Productimage="/img/llauna blau.png"
+            ProductName="Peach Heat"
+          />
         </div>
+      </section>
+
+      <section
+        class="max-w-4xl mx-auto my-20 bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-10 border-2 border-yellow-300 transition-all hover:shadow-yellow-200"
+      >
+        <h2
+          class="text-4xl font-extrabold mb-6 text-orange-400 font-pixelify tracking-wide text-center"
+        >
+          SOBRE LA BEGUDA
+        </h2>
+        <p class="text-lg text-gray-700 leading-8 font-outfit text-justify">
+          <span class="font-semibold text-orange-500">Solar Boost</span> és la beguda
+          refrescant definitiva per a l’estiu, creada per transportar-te a una onada
+          d’energia i frescor. Amb una combinació única d’extractes de fruites tropicals,
+          bombolles suaus i un toc cítric, ofereix un sabor vibrant i natural.
+          <br /><br />
+          La seva fórmula incorpora només ingredients naturals, sense sucres afegits
+          ni colorants artificials, i és rica en <span
+            class="font-medium text-green-600">vitamines B</span
+          > i <span class="font-medium text-green-600">antioxidants</span>. A
+          més, conté cafeïna natural d’extracte de <span class="italic"
+            >guaranà</span
+          > i <span class="italic">te verd</span>, proporcionant una energia
+          suau i duradora.
+          <br /><br />
+          Amb poques calories, <span class="font-semibold text-orange-500"
+            >Solar Boost</span
+          > és ideal per mantenir-te actiu sense renunciar al sabor. Descobreix l’energia
+          natural i refrescant de Solar Boost!
+        </p>
       </section>
 
       <section>
-        <div class="w-[50%] flex justify-center mt-50 flex-col">
-          <h1 class="text-4xl font-bold">Testimonis</h1>
+        <div id="FadeReviews">
+          <h3 class="text-4xl font-bold mb-10 mt-50 flex justify-center">
+            TESTIMONIS
+          </h3>
+          <div class="flex flex-wrap justify-center mt-20 w-[80%] ml-[10%]">
+            <ReviewComponent
+              Content="Solar Boost me sorprendió con su frescura y ese toque cítrico que te despierta al instante. Ideal para las tardes de calor y largas sesiones de surf. ¡Nunca falta en mi mochila!"
+              ReviewerPic="/img/Catador1.jpeg"
+              ReviewerName="Lucas Marín"
+              ReviewerCompany="Wave Riders Club"
+            />
 
-          <figure class="w-[90%] mt-30 p-10 bg-black rounded-2xl ml-10">
-            <div class="flex items-center mb-4 text-yellow-300">
-              <svg
-                class="w-5 h-5 me-1"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 22 20"
-              >
-                <path
-                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
-                ></path>
-              </svg>
-              <svg
-                class="w-5 h-5 me-1"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 22 20"
-              >
-                <path
-                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
-                ></path>
-              </svg>
-              <svg
-                class="w-5 h-5 me-1"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 22 20"
-              >
-                <path
-                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
-                ></path>
-              </svg>
-              <svg
-                class="w-5 h-5 me-1"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 22 20"
-              >
-                <path
-                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
-                ></path>
-              </svg>
-              <svg
-                class="w-5 h-5"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 22 20"
-              >
-                <path
-                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
-                ></path>
-              </svg>
-            </div>
-            <blockquote>
-              <p class="text-2xl font-semibold text-gray-900 dark:text-white">
-                "Flowbite is just awesome. It contains tons of predesigned
-                components and pages starting from login screen to complex
-                dashboard. Perfect choice for your next SaaS application."
-              </p>
-            </blockquote>
-            <figcaption
-              class="flex items-center mt-6 space-x-3 rtl:space-x-reverse"
-            >
-              <img
-                class="w-6 h-6 rounded-full"
-                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
-                alt="profile picture"
-              />
-              <div
-                class="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-300 dark:divide-gray-700"
-              >
-                <cite class="pe-3 font-medium text-gray-900 dark:text-white"
-                  >Bonnie Green</cite
-                >
-                <cite class="ps-3 text-sm text-gray-500 dark:text-gray-400"
-                  >CTO at Flowbite</cite
-                >
-              </div>
-            </figcaption>
-          </figure>
+            <ReviewComponent
+              Content="Probé muchas bebidas energéticas, pero ninguna como Solar Boost: sabor suave, sin ese regusto químico, y energía duradera. ¡Perfecta para mis maratones de diseño!"
+              ReviewerPic="/img/Catadora1.jpg"
+              ReviewerName="Valeria Solís"
+              ReviewerCompany="Pixel Creatives"
+            />
+
+            <ReviewComponent
+              Content="La combinación de frutas exóticas y burbujas ligeras de Solar Boost me conquistó. Es mi secreto para mantenerme activo en los festivales de verano."
+              ReviewerPic="/img/Sommelier1.jpg"
+              ReviewerName="Thiago Ventura"
+              ReviewerCompany="Sunset Events"
+            />
+
+            <ReviewComponent
+              Content="Solar Boost es pura vitalidad embotellada. Me ayuda a mantener el ritmo en mis rutas de montaña y, además, ¡su sabor es increíblemente refrescante!"
+              ReviewerPic="/img/antiguocatador.jpg"
+              ReviewerName="Aina Ferrer"
+              ReviewerCompany="Trail Explorers"
+            />
+          </div>
         </div>
       </section>
     </main>
+
+    <footer
+      class="bg-[#FDFCE5] text-black py-10 mt-20 border-t-2 border-yellow-200"
+    >
+      <div
+        class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8"
+      >
+        <div class="flex flex-col items-center md:items-start">
+          <h2 class="text-2xl font-bold mb-2 tracking-wider">SOLAR BOOST</h2>
+          <p class="text-sm text-gray-600 mb-2">
+            © {new Date().getFullYear()} Solar Boost. Todos los derechos reservados.
+          </p>
+          <div class="flex gap-4 mt-2">
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram"
+              class="hover:text-orange-400 transition"
+            >
+              <svg width="24" height="24" fill="currentColor" class="inline"
+                ><path
+                  d="M7.75 2A5.75 5.75 0 0 0 2 7.75v8.5A5.75 5.75 0 0 0 7.75 22h8.5A5.75 5.75 0 0 0 22 16.25v-8.5A5.75 5.75 0 0 0 16.25 2zm0 1.5h8.5A4.25 4.25 0 0 1 20.5 7.75v8.5A4.25 4.25 0 0 1 16.25 20.5h-8.5A4.25 4.25 0 0 1 3.5 16.25v-8.5A4.25 4.25 0 0 1 7.75 3.5zm8.75 2.25a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-6 2.25A5 5 0 1 0 17 12a5 5 0 0 0-5-5zm0 1.5a3.5 3.5 0 1 1-3.5 3.5A3.5 3.5 0 0 1 10.5 7.25z"
+                ></path></svg
+              >
+            </a>
+            <a
+              href="https://X.com/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Twitter"
+              class="hover:text-orange-400 transition"
+            >
+              <svg width="24" height="24" fill="currentColor" class="inline"
+                ><path
+                  d="M22 5.924a8.19 8.19 0 0 1-2.357.646A4.118 4.118 0 0 0 21.448 4.1a8.224 8.224 0 0 1-2.605.996A4.107 4.107 0 0 0 11.034 8.03a11.65 11.65 0 0 1-8.457-4.287a4.106 4.106 0 0 0 1.27 5.482A4.073 4.073 0 0 1 2 8.096v.052a4.106 4.106 0 0 0 3.292 4.025a4.095 4.095 0 0 1-1.852.07a4.108 4.108 0 0 0 3.834 2.85A8.233 8.233 0 0 1 2 19.54a11.616 11.616 0 0 0 6.29 1.844c7.547 0 11.675-6.155 11.675-11.495c0-.175-.004-.349-.012-.522A8.18 8.18 0 0 0 22 5.924z"
+                ></path></svg
+              >
+            </a>
+            <a
+              href="mailto:info@solarboost.com"
+              aria-label="Email"
+              class="hover:text-orange-400 transition"
+            >
+              <svg width="24" height="24" fill="currentColor" class="inline"
+                ><path
+                  d="M2.25 6.75A2.25 2.25 0 0 1 4.5 4.5h15a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-15A2.25 2.25 0 0 1 2.25 17.25zm1.5 0v.638l8.25 5.512l8.25-5.512V6.75a.75.75 0 0 0-.75-.75h-15a.75.75 0 0 0-.75.75zm16.5 1.862l-7.74 5.174a.75.75 0 0 1-.82 0l-7.74-5.174V17.25a.75.75 0 0 0 .75.75h15a.75.75 0 0 0 .75-.75z"
+                ></path></svg
+              >
+            </a>
+          </div>
+        </div>
+        <div class="flex flex-col items-center md:items-end gap-2">
+          <a href="/" class="hover:text-orange-400 transition text-lg">Inicio</a
+          >
+          <a href="#products" class="hover:text-orange-400 transition text-lg"
+            >Productos</a
+          >
+          <a
+            href="#FadeReviews"
+            class="hover:text-orange-400 transition text-lg">Testimonios</a
+          >
+          <a
+            href="mailto:info@solarboost.com"
+            class="hover:text-orange-400 transition text-lg">Contacto</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Jersey+15&family=Pixelify+Sans:wght@400..700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Cal+Sans&family=Outfit:wght@100..900&display=swap");
+
+      header {
+        padding: 15px 30px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-family: "Pixelify Sans", cursive;
+        font-size: larger;
+      }
+
+      #products {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        justify-content: center;
+        padding: 30px;
+      }
+
+      .font-pixelify {
+        font-family: "Pixelify Sans", cursive;
+      }
+
+      .product {
+        border-radius: 15px;
+        padding: 15px;
+        width: 200px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        border: 2px dashed #ffde59;
+      }
+
+      .product:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 25px rgba(255, 180, 0, 0.4);
+      }
+
+      .product-image {
+        width: 70%;
+        height: auto;
+        margin-bottom: 10px;
+        border-radius: 10px;
+      }
+
+      .product h2 {
+        font-family: "Pixelify Sans", cursive;
+        font-size: 18px;
+        color: #000000;
+        text-shadow: 1px 1px #fff2ac;
+      }
+    </style>
   </body>
-
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Jersey+15&family=Pixelify+Sans:wght@400..700&display=swap");
-    @import url("https://fonts.googleapis.com/css2?family=Cal+Sans&family=Outfit:wght@100..900&display=swap");
-
-    header {
-      padding: 15px 30px;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-family: "Pixelify Sans", cursive;
-      font-size: larger;
-    }
-
-    #products {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 25px;
-      justify-content: center;
-      padding: 30px;
-    }
-
-    .product {
-      border-radius: 15px;
-      padding: 15px;
-      width: 200px;
-      height: 300px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      transition:
-        transform 0.2s,
-        box-shadow 0.2s;
-      border: 2px dashed #ffde59;
-    }
-
-    .product:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 25px rgba(255, 180, 0, 0.4);
-    }
-
-    .product-image {
-      width: 70%;
-      height: auto;
-      margin-bottom: 10px;
-      border-radius: 10px;
-    }
-
-    .product h2 {
-      font-family: "Pixelify Sans", cursive;
-      font-size: 18px;
-      color: #000000;
-      text-shadow: 1px 1px #fff2ac;
-    }
-  </style>
 </html>
