@@ -10,19 +10,19 @@ import "../styles/global.css";
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
-  <body class="bg-amber-100">
-    <header class="p-6 text-white bg-black">
+  <body class="bg-[#f7f6e8]">
+    <header class="p-6 text-black bg-[#FDFCE5]">
       <nav class="flex justify-between items-center text-2xl font-bold">
-        <h1 class="text-3xl text-amber-500">SOLAR</h1>
+        <h1 class="text-3xl text-black-500">SOLAR</h1>
         <div class="flex gap-8">
-          <a href="/" class="hover:text-amber-200 transition text-white"
+          <a href="/" class="hover:text-amber-200 transition text-black"
             >Promotions</a
           >
-          <a href="/" class="hover:text-amber-200 transition text-white"
+          <a href="/" class="hover:text-amber-200 transition text-black"
             >Best Sellers</a
           >
         </div>
-        <h1 class="text-3xl text-amber-500">BOOST</h1>
+        <h1 class="text-3xl text-black-500">BOOST</h1>
       </nav>
     </header>
     <main class="py-10 text-center">
@@ -30,12 +30,19 @@ import "../styles/global.css";
         <div class="w-full relative bottom-10">
           <video
             autoplay
+            preload="auto"
             muted
             loop
             class="w-full h-100 object-cover opacity-100"
             style="mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%); -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);"
+            poster="/img/base-nautica.png"
           >
             <source src="/img/background-video.mp4" type="video/mp4" />
+            <img
+              src="/img/base-nautica.png"
+              alt="Background fallback"
+              class="w-full h-100 object-cover"
+            />
           </video>
           <h1
             class="absolute inset-0 flex items-center justify-center text-orange-500 text-shadow-black text-shadow-lg text-6xl font-bold"
@@ -54,7 +61,7 @@ import "../styles/global.css";
           class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 px-6"
         >
           <div
-            class="bg-white rounded-lg shadow-md p-6 transform hover:scale-105 transition"
+            class="rounded-lg shadow-md p-6 transform hover:scale-102 hover:drop-shadow-2xl hover:bg-[#cceeff] hover:opacity-70 transition duration-500"
           >
             <img
               src="/img/llauna default.png"
@@ -64,7 +71,7 @@ import "../styles/global.css";
             <h2 class="text-lg font-semibold mt-4">Summer Punch</h2>
           </div>
           <div
-            class="bg-white rounded-lg shadow-md p-6 transform hover:scale-105 transition"
+            class="rounded-lg shadow-md p-6 transform hover:scale-102 hover:drop-shadow-2xl hover:bg-[#cceeff] hover:opacity-70 transition duration-500"
           >
             <img
               src="/img/llauna morada.png"
@@ -74,7 +81,7 @@ import "../styles/global.css";
             <h2 class="text-lg font-semibold mt-4">Wild Summer</h2>
           </div>
           <div
-            class="bg-white rounded-lg shadow-md p-6 transform hover:scale-105 transition"
+            class="rounded-lg shadow-md p-6 transform hover:scale-102 hover:drop-shadow-2xl hover:bg-[#cceeff] hover:opacity-70 transition duration-500"
           >
             <img
               src="/img/llauna verde.png"
@@ -84,7 +91,7 @@ import "../styles/global.css";
             <h2 class="text-lg font-semibold mt-4">Green Sun</h2>
           </div>
           <div
-            class="bg-white rounded-lg shadow-md p-6 transform hover:scale-105 transition"
+            class="rounded-lg shadow-md p-6 transform hover:scale-102 hover:drop-shadow-2xl hover:bg-[#cceeff] hover:opacity-70 transition duration-500"
           >
             <img
               src="/img/llauna blau.png"
@@ -93,6 +100,98 @@ import "../styles/global.css";
             />
             <h2 class="text-lg font-semibold mt-4">Peach Heat</h2>
           </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="w-[50%] flex justify-center mt-50 flex-col">
+          <h1 class="text-4xl font-bold">Testimonis</h1>
+
+          <figure class="w-[90%] mt-30 p-10 bg-black rounded-2xl ml-10">
+            <div class="flex items-center mb-4 text-yellow-300">
+              <svg
+                class="w-5 h-5 me-1"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 22 20"
+              >
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+                ></path>
+              </svg>
+              <svg
+                class="w-5 h-5 me-1"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 22 20"
+              >
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+                ></path>
+              </svg>
+              <svg
+                class="w-5 h-5 me-1"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 22 20"
+              >
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+                ></path>
+              </svg>
+              <svg
+                class="w-5 h-5 me-1"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 22 20"
+              >
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+                ></path>
+              </svg>
+              <svg
+                class="w-5 h-5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 22 20"
+              >
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+                ></path>
+              </svg>
+            </div>
+            <blockquote>
+              <p class="text-2xl font-semibold text-gray-900 dark:text-white">
+                "Flowbite is just awesome. It contains tons of predesigned
+                components and pages starting from login screen to complex
+                dashboard. Perfect choice for your next SaaS application."
+              </p>
+            </blockquote>
+            <figcaption
+              class="flex items-center mt-6 space-x-3 rtl:space-x-reverse"
+            >
+              <img
+                class="w-6 h-6 rounded-full"
+                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
+                alt="profile picture"
+              />
+              <div
+                class="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-300 dark:divide-gray-700"
+              >
+                <cite class="pe-3 font-medium text-gray-900 dark:text-white"
+                  >Bonnie Green</cite
+                >
+                <cite class="ps-3 text-sm text-gray-500 dark:text-gray-400"
+                  >CTO at Flowbite</cite
+                >
+              </div>
+            </figcaption>
+          </figure>
         </div>
       </section>
     </main>
